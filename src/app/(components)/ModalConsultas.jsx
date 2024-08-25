@@ -38,9 +38,9 @@ export const ModalConsultas = ({ setShowModal }) => {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-2 gap-x-4 ">
+                <div className="w-full  grid grid-cols-1 mx-auto md:grid md:grid-cols-2 gap-x-4 items-center  ">
 
-                    <div className="w-[50%]">
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
                         <Accordion
                             title="Do you prefer Android or iOS"
                             answer="I like to use iOS products"
@@ -49,7 +49,7 @@ export const ModalConsultas = ({ setShowModal }) => {
 
                     </div>
 
-                    <div className="w-[50%]">
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
                         <Accordion
                             title="Do you prefer Android or iOS"
                             answer="I like to use iOS products"
@@ -57,7 +57,14 @@ export const ModalConsultas = ({ setShowModal }) => {
                         />
                     </div>
 
-                    <div className="w-[50%]">
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
+                        <Accordion
+                            title="Do you prefer Android or iOS"
+                            answer="I like to use iOS products"
+
+                        />
+                    </div>
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
                         <Accordion
                             title="Do you prefer Android or iOS"
                             answer="I like to use iOS products"
@@ -65,15 +72,7 @@ export const ModalConsultas = ({ setShowModal }) => {
                         />
                     </div>
 
-                    <div className="w-[50%]">
-                        <Accordion
-                            title="Do you prefer Android or iOS"
-                            answer="I like to use iOS products"
-
-                        />
-                    </div>  
-
-                    <div className="w-[50%]">
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
                         <Accordion
                             title="Do you prefer Android or iOS"
                             answer="I like to use iOS products"
@@ -81,13 +80,13 @@ export const ModalConsultas = ({ setShowModal }) => {
                         />
                     </div>
 
-                    <div className="w-[50%]">
+                    <div className="md:w-[50%] -ml-4 md:-ml-0" >
                         <Accordion
                             title="Do you prefer Android or iOS"
                             answer="I like to use iOS products"
 
                         />
-                    </div> 
+                    </div>
                 </div>
                 {/* <div className="p-4 bg-gradient-to-r relative top-[5%] from-cyan-500 to-blue-500  rounded-lg xl:w-full px-4 w-[95%] mx-auto flex gap-x-[150px] justify-around">
                     <Accordion

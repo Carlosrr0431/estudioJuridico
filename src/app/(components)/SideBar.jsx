@@ -172,7 +172,7 @@ const SideNav = () => {
 
             <div className={`relative duration-500 transition-all  md:flex  md:flex-wrap md:gap-x-8 left-[100px]  mb-20 md:left-[300px] -mx-6 mt-[20px]  max-w-[80%] h-full ${open ? '' : 'md:-ml-[120px] md:gap-x-12 '} mt-[50px] `}>
 
-                <div class="flex justify-center">
+                <div class="group my-10 h-auto flex w-full justify-between max-w-[270px] md:max-w-[300px] flex-col overflow-hidden   shadow-md">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
                         <iframe width="320" height="240" src="https://www.youtube.com/embed/YFiuHTnwJw4?si=-EntAbsAAkcoM4kZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='w-full rounded-t-lg border-0 '></iframe>
@@ -188,7 +188,7 @@ const SideNav = () => {
                     </div>
                 </div>
 
-                <div class="flex justify-center">
+                <div class="group my-10 h-auto flex w-full justify-between max-w-[270px] md:max-w-[300px] flex-col overflow-hidden  bg-white shadow-md">
                     <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
                         <iframe width="320" height="240" src="https://www.youtube.com/embed/FfgZx2R4j-c?si=d48zW-iil_4BZS-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='w-full rounded-t-lg border-0 '></iframe>
