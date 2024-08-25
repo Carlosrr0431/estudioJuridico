@@ -2,8 +2,6 @@
 
 import React from 'react'
 
-import DashBoardInfo from "../../../(components)/DashBoardInfo";
-
 import { useEffect } from 'react'
 
 import { useState } from 'react';
@@ -147,9 +145,7 @@ const DashBoard = () => {
 
 
         <div className='w-full h-full  overflow-y-auto overflow-x-hidden'>
-          {
-            panel == 'Datos' ? (<DashBoardInfo tipo={tipo} />) : panel == 'Contenido' ? ((<DashBoardInfoContenido tipo={tipo} />)) : null
-          }
+
         </div>
 
 
