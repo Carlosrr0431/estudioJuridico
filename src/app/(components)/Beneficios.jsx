@@ -1,28 +1,8 @@
 "use client"
-import React, { use, useRef, useState } from 'react'
+import React, { useState } from 'react'
 
-import { FaWifi } from "react-icons/fa";
-import { FaGlassWaterDroplet } from "react-icons/fa6";
-import { FaShower } from "react-icons/fa6";
-import { CgGym } from "react-icons/cg";
-import Wifi from '../public/wifi-svgrepo-com (1).svg'
-import Ducha from '../public/shower-svgrepo-com.svg'
-import Vestuario from '../public/lockers-svgrepo-com.svg'
-import Dispenser from '../public/water-dispenser-svgrepo-com.svg'
-import Patologia from '../public/health-analyst-medical-diagnosis-body-wellness-check-up-svgrepo-com.svg'
-import Prevencion from '../public/protect-svgrepo-com (1).svg'
-import SalaAcondicionamiento from '../public/gym-svgrepo-com.svg'
-import Recuperacion from '../public/exercise-gym-svgrepo-com.svg'
-import AltoRendimiento from '../public/cyclist-svgrepo-com.svg'
-import Image from 'next/image';
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { useEffect } from 'react';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BoltIcon, RocketIcon, UsersIcon } from 'lucide-react';
 import { GoLaw } from "react-icons/go";
 import { motion } from "framer-motion"
-import { ModalConsultas } from './ModalConsultas';
 import { ModalArea } from './ModalArea';
 
 
@@ -67,11 +47,6 @@ export const Beneficios = ({ scrollNum }) => {
                 <section className="">
                     <div className="container mx-auto px-4 mt-[80px]">
 
-<<<<<<< HEAD
-=======
-                <section className="bg-background mt-[110px] md:mt-0  md:py-0 w-full h-full">
-                    <div className="container mx-auto px-4">
->>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
 
                             {beneficiosArticles.map((article, i) => (
@@ -92,13 +67,6 @@ export const Beneficios = ({ scrollNum }) => {
 
 
 
-<<<<<<< HEAD
-=======
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={SalaAcondicionamiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Programas personalizados</h3>
->>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
 
                         </div>
 
