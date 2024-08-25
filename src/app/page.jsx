@@ -1,20 +1,12 @@
 "use client"
 
-import Image from "next/image";
-import Degradado from './public/capas.svg'
-import Socials from "./(components)/Socials";
-import { useEffect, useRef, useState } from "react";
+
+import { useRef, useState } from "react";
 import { Beneficios } from "./(components)/Beneficios";
 import { Consultas } from "./(components)/Consultas";
-import { Sponsor } from "./(components)/Sponsor";
-import TestimonialSlider from "./(components)/TestimonialSlider";
-import Link from "next/link";
-import SwiperGym from "./(components)/SwiperEstudio";
-import Logo from './public/logo estudio juridico-02.svg'
 import Video from './public/6101151-uhd_4096_2160_30fps.mp4'
 import { useAppContext } from "./(context)/AppWrapper";
 import ModalOracion from "./(components)/ModalOracion";
-import imagenForm from './public/view-3d-justice-scales (1).jpg'
 import Contact from "./(components)/Contact";
 
 
