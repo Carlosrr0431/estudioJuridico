@@ -67,6 +67,11 @@ export const Beneficios = ({ scrollNum }) => {
                 <section className="">
                     <div className="container mx-auto px-4 mt-[80px]">
 
+<<<<<<< HEAD
+=======
+                <section className="bg-background mt-[110px] md:mt-0  md:py-0 w-full h-full">
+                    <div className="container mx-auto px-4">
+>>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
 
                             {beneficiosArticles.map((article, i) => (
@@ -87,6 +92,13 @@ export const Beneficios = ({ scrollNum }) => {
 
 
 
+<<<<<<< HEAD
+=======
+                            </div>
+                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
+                                <Image src={SalaAcondicionamiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
+                                <h3 className="text-xl font-semibold text-gray-600">Programas personalizados</h3>
+>>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
 
                         </div>
 

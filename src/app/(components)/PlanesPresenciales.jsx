@@ -141,7 +141,11 @@ export const PlanesPresenciales = () => {
 
 
 
+<<<<<<< HEAD
                         <p class="font-medium text-gray-500 dark:text-gray-300">{planes == 'Plan x2' ? "Incluye 2 clases por semana" : planes == "Plan x3" ? 'Incluye 3 clases por semana' : planes == 'Plan Libre' ? 'Incluye todos los dias' : ''}</p>
+=======
+                        <p class="font-medium text-gray-500 dark:text-gray-300">{planes == 'Plan x2' ? "Incluye 8 clases por mes" : planes == "Plan x3" ? 'Incluye 12 clases por mes' : planes == 'Plan Libre' ? 'Incluye todos los dias' : ''}</p>
+>>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
                         {/* <Link
 
                             rel="noopener noreferrer"
@@ -173,7 +177,11 @@ export const PlanesPresenciales = () => {
 
                                 return handleSubmit(planes, precio)
                             }} class="w-full px-4 py-2 mt-10 tracking-wide text-black capitalize transition-colors duration-300 transform bg-fondo1 rounded-md hover:bg-black hover:text-yellow-500 focus:outline-none focus:bg-black focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+<<<<<<< HEAD
                                 Mas Info...
+=======
+                                Comprar
+>>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
                             </button>
                         }
 
@@ -189,6 +197,7 @@ export const PlanesPresenciales = () => {
                         </p>
 
                         <p class="font-medium text-gray-500 dark:text-gray-300">Incluye 2 clases por semana</p>
+<<<<<<< HEAD
                         {/* <Link
 
                             rel="noopener noreferrer"
@@ -200,7 +209,20 @@ export const PlanesPresenciales = () => {
                                 Mas info...
                             </button>
                         </Link> */}
+=======
+                        <Link
+>>>>>>> 0d7c3f955e654cc664dc5ad66f2efbf3adbb89df
 
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://wa.me/+543876364202?text=Necesito renovar mi plan..."
+                            className={``}
+                        >
+                            <button class="w-full px-4 py-2 mt-10 tracking-wide text-black capitalize transition-colors duration-300 transform bg-fondo1 rounded-md hover:bg-black hover:text-yellow-500 focus:outline-none focus:bg-black focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                Mas info...
+                            </button>
+                        </Link>
+{/* 
                         {
                             session?.user?.name == undefined ? <button onClick={() => {
                                 signIn('google', {
@@ -215,7 +237,7 @@ export const PlanesPresenciales = () => {
                             }} class="w-full px-4 py-2 mt-10 tracking-wide text-black capitalize transition-colors duration-300 transform bg-fondo1 rounded-md hover:bg-black hover:text-yellow-500 focus:outline-none focus:bg-black focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                 Enviar
                             </button>
-                        }
+                        } */}
 
                     </div>
 
