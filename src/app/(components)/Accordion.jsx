@@ -1,29 +1,16 @@
-import { supabaseClient } from "@/supabase/client";
+
 import { useSession } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { PiCaretDoubleDownLight } from "react-icons/pi";
 import { PiCaretDoubleUpLight } from "react-icons/pi";
-import { TbPointFilled } from "react-icons/tb";
-import { BiSolidUserDetail } from "react-icons/bi";
 import { ModalUser } from "./ModalUser";
-import { useRouter } from "next/navigation";
-import axios from "axios";
-import { FaCircleCheck } from "react-icons/fa6";
 import ModalPlan from "./ModalPlan";
-import { actualizarNotificacion } from "../action";
-import moment from "moment";
-import Image from "next/image";
-import { redirect } from "react-router-dom";
-import Link from "next/link";
-
 
 const Accordion = () => {
-  const { data: session } = useSession()
+
   const [accordionOpen, setAccordionOpen] = useState(false);
-  const [diasPlan, setDiasPlan] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const [showModal2, setShowModal2] = useState(false)
-  const [listaPrecios, setListaPrecios] = useState();
   const [info, setInfo] = useState({})
 
   return (
