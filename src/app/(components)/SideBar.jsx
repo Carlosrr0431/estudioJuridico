@@ -16,6 +16,7 @@ import { GiHieroglyphLegs } from "react-icons/gi";
 import { supabaseClient } from '@/supabase/client';
 import { useSession } from 'next-auth/react';
 
+import { GoLaw } from "react-icons/go";
 
 const SideNav = () => {
 
@@ -26,17 +27,11 @@ const SideNav = () => {
     const { data: session } = useSession()
 
     const menus = [
-        { name: "Todos", link: "/", icon: LuDumbbell },
-        { name: "Piernas", link: "/", icon: GiHieroglyphLegs },
-        { name: "Brazos", link: "/", icon: BsPersonArmsUp },
-        { name: "Espalda", link: "/", icon: BsPersonStanding },
-
-
-        // { name: "analytics", link: "/", icon: MdOutlineDashboard, margin: true },
-        // { name: "File Manager", link: "/", icon: MdOutlineDashboard },
-        // { name: "Cart", link: "/", icon: MdOutlineDashboard },
-        // { name: "Saved", link: "/", icon: MdOutlineDashboard, margin: true },
-        { name: "Mis Cursos", link: "/", icon: MdOutlineDashboard },
+        { name: "Todos", link: "/", icon: GoLaw },
+        { name: "Aduanas", link: "/", icon: GoLaw },
+        { name: "Importaciones", link: "/", icon: GoLaw },
+        { name: "Exportaciones", link: "/", icon: GoLaw },
+        { name: "Mis Cursos", link: "/", icon: GoLaw },
     ];
     const [open, setOpen] = useState(false);
 
@@ -45,56 +40,56 @@ const SideNav = () => {
         setOpcion(info)
     }
 
+    // useEffect(() => {
+    //     const getSupabaseOficial = async () => {
+    //         let data = await supabaseClient
+    //             .from("usuarios")
+    //             .select("*")
+    //             .match({ email: session?.user?.email }).single();
+
+
+    //         setUsuario(data.data)
+
+
+
+    //     }
+
+
+
+    //     if (session?.user?.email != undefined)
+    //         getSupabaseOficial()
+
+    //     const channelUsuarios = supabaseClient
+    //         .channel('usuarios')
+    //         .on('postgres_changes', { event: '*', schema: 'public', table: 'usuarios' }, (payload) => {
+
+    //             if (payload.eventType == 'UPDATE') {
+    //                 return setUsuario(payload.new)
+    //             }
+    //         })
+    //         .subscribe()
+
+
+    //     return () => {
+
+    //         supabaseClient.removeChannel(supabaseClient.channel(channelUsuarios))
+    //     }
+
+
+    // }, [session?.user.email])
+
     useEffect(() => {
-        const getSupabaseOficial = async () => {
-            let data = await supabaseClient
-                .from("usuarios")
-                .select("*")
-                .match({ email: session?.user?.email }).single();
+        // const getSupabaseOficial = async () => {
+        //     let data = await supabaseClient
+        //         .from("cursos")
+        //         .select("*").order('id', { ascending: true })
 
 
-            setUsuario(data.data)
+        //     setUsuarios(data.data)
+        //     setUsuariosFilter(data.data)
+        // }
 
-
-
-        }
-
-
-
-        if (session?.user?.email != undefined)
-            getSupabaseOficial()
-
-        const channelUsuarios = supabaseClient
-            .channel('usuarios')
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'usuarios' }, (payload) => {
-
-                if (payload.eventType == 'UPDATE') {
-                    return setUsuario(payload.new)
-                }
-            })
-            .subscribe()
-
-
-        return () => {
-
-            supabaseClient.removeChannel(supabaseClient.channel(channelUsuarios))
-        }
-
-
-    }, [session?.user.email])
-
-    useEffect(() => {
-        const getSupabaseOficial = async () => {
-            let data = await supabaseClient
-                .from("cursos")
-                .select("*").order('id', { ascending: true })
-
-
-            setUsuarios(data.data)
-            setUsuariosFilter(data.data)
-        }
-
-        getSupabaseOficial()
+        // getSupabaseOficial()
     }, [])
 
 
@@ -177,7 +172,37 @@ const SideNav = () => {
 
             <div className={`relative duration-500 transition-all  md:flex  md:flex-wrap md:gap-x-8 left-[100px]  mb-20 md:left-[300px] -mx-6 mt-[20px]  max-w-[80%] h-full ${open ? '' : 'md:-ml-[120px] md:gap-x-12 '} mt-[50px] `}>
 
+                <div class="flex justify-center">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
 
+                        <iframe width="320" height="240" src="https://www.youtube.com/embed/YFiuHTnwJw4?si=-EntAbsAAkcoM4kZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='w-full rounded-t-lg border-0 '></iframe>
+
+                        <div class="p-6">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">Conferencia 2</h5>
+                            <p class="text-gray-700 text-base mb-4">
+                                Some quick example text to build on the card title and make up the bulk of the card
+                                content.
+                            </p>
+                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">Ir al contenido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+
+                        <iframe width="320" height="240" src="https://www.youtube.com/embed/FfgZx2R4j-c?si=d48zW-iil_4BZS-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className='w-full rounded-t-lg border-0 '></iframe>
+
+                        <div class="p-6">
+                            <h5 class="text-gray-900 text-xl font-medium mb-2">Conferencia 3</h5>
+                            <p class="text-gray-700 text-base mb-4">
+                                Some quick example text to build on the card title and make up the bulk of the card
+                                content.
+                            </p>
+                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">Ir al contenido</button>
+                        </div>
+                    </div>
+                </div>
                 {
                     usuario != undefined && opcion == "Todos" ?
                         (usuarios.map((elem, index) => {

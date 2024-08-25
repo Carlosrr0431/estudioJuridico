@@ -1,3 +1,4 @@
+"use client"
 import React, { use, useRef, useState } from 'react'
 
 import { FaWifi } from "react-icons/fa";
@@ -19,139 +20,84 @@ import { useGSAP } from "@gsap/react";
 import { useEffect } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BoltIcon, RocketIcon, UsersIcon } from 'lucide-react';
+import { GoLaw } from "react-icons/go";
+import { motion } from "framer-motion"
+import { ModalConsultas } from './ModalConsultas';
+import { ModalArea } from './ModalArea';
+
+
+const fadeInAnimationVariants = {
+    initial: (i) => ({
+        opacity: 0,
+        translateX: i % 2 === 0 ? -50 : 50,
+        translateY: -50,
+    }),
+    animate: (i) => (
+        {
+            opacity: 1, translateX: 0, translateY: 0,
+            transition: {
+                duration: 0.3,
+                delay: i * 0.2,
+
+            }
+        }
+    )
+}
 
 export const Beneficios = ({ scrollNum }) => {
 
+    const [showModal, setShowModal] = useState(false);
+    const [tipoArea, setTipoArea] = useState("");
 
-
-    gsap.registerPlugin(useGSAP, ScrollTrigger)
-    const container = useRef()
-
-    useGSAP(
-
-        () => {
-
-            gsap.to('l1', {
-                x: 100,
-                scrollTrigger: {
-                    trigger: 'l1',
-                    start: 'top bottom',
-                    end: 'center center',
-                    scrub: true
-                },
-                rotate: 360,
-                duration: 3
-            });
-
-
-
-        },
-        { scope: container }
-
-    );
-
-
-
+    const beneficiosArticles = [
+        { id: 1, title: "Litigios", excerpt: "Await you" },
+        { id: 2, title: "Casos de familia", excerpt: "Await you" },
+        { id: 3, title: "Aduana", excerpt: "Await you" },
+        { id: 4, title: "Great times", excerpt: "Await you" },
+        { id: 5, title: "Great times", excerpt: "Await you" },
+        { id: 6, title: "Great times", excerpt: "Await you" },
+    ];
 
 
     return (
-        <div ref={container} className='intro w-full h-full bg-rgb(178, 190, 181) overflow-y-hidden purple -mt-[100px]' >
+        <div className='w-full h-full bg-rgb(178, 190, 181) overflow-y-hidden purple ' >
             <div className='w-full h-full  '  >
-                <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[20px] -mb-[120px]   md:mt-10 md:mb-4 md:text-[30px] mx-auto'>NUESTROS BENEFICIOS</h1>
+                <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[25px]   md:mt-[60px] md:mb-10 mt-10 md:text-[35px] mx-auto text-slate-800 font-bold'>Nuestros Servicios</h1>
 
-                <section className="py-20 bg-background mt-14">
-                    <div className="container mx-auto px-4">
+                <section className="">
+                    <div className="container mx-auto px-4 mt-[80px]">
+
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Wifi} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px] text-primary fill-#005b82 ' color='#005b82' />
-                                <h3 className="text-xl font-semibold text-gray-600">Wifi Gratis</h3>
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Ducha} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Duchas</h3>
+                            {beneficiosArticles.map((article, i) => (
+                                <motion.button key={article.id}
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Vestuario} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Vestuario</h3>
+                                    initial="initial"
+                                    onClick={() => (setShowModal(true), setTipoArea(article.title))}
+                                    variants={fadeInAnimationVariants}
+                                    whileInView="animate"
+                                    viewport={{ once: true }}
+                                    custom={i}
+                                    className="flex group flex-col items-center justify-center gap-4 rounded-lg bg-gray-200 p-6 text-center shadow-sm transition-all duration-300 hover:scale-150 transform-gpu z-10 shadow-black hover:bg-sky-800">
+                                    <GoLaw className='h-14 w-14 group-hover:text-white text-yellow-700' />
+                                    <h3 className="text-xl font-semibold text-gray-800 group-hover:text-gray-300">Litigios</h3>
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Dispenser} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Dispenser</h3>
+                                </motion.button>
+                            ))}
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Patologia} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Patologias</h3>
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={Prevencion} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Prevencion de lesiones</h3>
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={SalaAcondicionamiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Sala de acondicionamiento</h3>
 
-                            </div>
-                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                                <Image src={AltoRendimiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Recuperación deportiva</h3>
-
-                            </div>
                         </div>
+
                     </div>
                 </section>
-                {/* <div className='grid grid-cols-2 sm:grid-cols-3 items-center  content-center w-full h-full place-items-center space-y-4 top-[70px] relative  mx-auto  '>
-                    <div className='l1 items-center flex flex-col'>
-                        <Image src={Wifi} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px]'>Wifi Gratis</h2>
-                    </div>
-                    <div className='circle items-center flex flex-col'>
-                        <Image src={Ducha} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px]'>Duchas</h2>
-                    </div>
-                    <div className='circle items-center flex flex-col'>
-                        <Image src={Vestuario} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px]'>Vestuario</h2>
-                    </div>
-                    <div className=' items-center flex flex-col'>
-                        <Image src={Dispenser} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px]'>Dispenser</h2>
-                    </div>
 
-                    <div className=' items-center flex flex-col'>
-                        <Image src={Patologia} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px]'>Patologias</h2>
-                    </div>
-
-                    <div className=' items-center flex flex-col'>
-                        <Image src={Prevencion} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 sm:text-[20] text-[18px] text-center'>Prevencion de lesiones</h2>
-                    </div>
-
-                    <div className=' items-center flex flex-col'>
-                        <Image src={SalaAcondicionamiento} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 ml-2 sm:text-[20] text-[18px] text-center'>Sala de acondicionamiento</h2>
-                    </div>
-
-                    <div className=' items-center flex flex-col'>
-                        <Image src={Recuperacion} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 text-center sm:text-[20] text-[18px]'>Recuperación deportiva</h2>
-                    </div>
-
-
-                    <div className=' items-center flex flex-col'>
-                        <Image src={AltoRendimiento} width={0} height={0} alt='' className='w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]' />
-                        <h2 className='mt-2 text-center sm:text-[20] text-[18px]'>Alto rendimiento</h2>
-                    </div>
-
-
-                </div> */}
             </div>
+
+            {
+                showModal && <ModalArea tipoArea={tipoArea} showModal={showModal} setShowModal={() => setShowModal(false)} />
+            }
         </div>
     )
 }

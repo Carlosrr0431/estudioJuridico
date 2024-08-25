@@ -18,7 +18,7 @@ import Image from "next/image";
 export const navData = [
   { name: "Inicio", path: "/", icon: Home },
   { name: "Conocenos", path: "/about", icon: Conocenos },
-  { name: "Planes", path: "/planes", icon: Planes },
+  // { name: "Planes", path: "/planes", icon: Planes },
   { name: "Cursos", path: "/cursos", icon: Cursos },
 
   // { name: "Mi Semilla", path: "/semilla", icon: Semilla },
@@ -50,7 +50,7 @@ const Nav = () => {
     <nav className={`${pathname == '/dashboard' || pathname == '/login' || pathname == '/dashboard/administrador' || pathname == '/dashboard/user' ? 'hidden' : 'flex'} montserrat  flex-col  items-center xl:justify-center gap-y-4  fixed h-max bottom-0 mt-auto xl:right-[2%]  z-50 w-full top-0 xl:w-12 xl:max-w-md xl:h-[60%] xl:bottom-[150px]`}>
       <div
 
-        className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-5 px-4 md:px-40 xl:px-0 h-[80px] backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full xl:h-max py-4 bg-yellow-400 opacity-80 bg-blend-multiply"
+        className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-5 px-4 md:px-40 xl:px-0 h-[80px] backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full xl:h-max py-4 bg-gray-800 opacity-80 bg-blend-multiply"
       >
         {navData.map((link, index) => {
           return (

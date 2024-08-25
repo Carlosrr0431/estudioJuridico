@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import Loguear from './Loguear';
 
 
-import Logo from '../public/logo biggest.svg'
+import Logo from '../public/logo estudio juridico-02.svg'
 import { useAppContext } from "../(context)/AppWrapper";
 import { useEffect } from "react";
 
@@ -20,9 +20,9 @@ const Header = () => {
 
   return (
     <div  >
-      <header className={`${pathname == '/user' || pathname == '/cursos' || pathname == '/ubicacion' || pathname == '/dashboard/administrador' || pathname == '/dashboard' || pathname == '/dashboard/user' || pathname == '/eventos' || pathname == '/login' ? 'hidden' : ''} absolute z-50  w-full flex items-center   xl:h-[100px]`}>
+      <header className={`${pathname == '/user' || pathname == '/cursos' || pathname == '/ubicacion' || pathname == '/dashboard/administrador' || pathname == '/dashboard' || pathname == '/dashboard/user' || pathname == '/eventos' || pathname == '/login' ? 'hidden' : ''} absolute z-50  w-full flex items-center   xl:h-[100px] `}>
         <div className="container mx-auto">
-          <div className="items-center relative flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-8 py-8">
+          <div className="items-center relative flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-8 py-2">
             <div className="">
               <Link href="/" >
 
@@ -42,10 +42,10 @@ const Header = () => {
             </div>
 
             <Socials />
-
+{/* 
             <div className="order-first relative left-[70px] sm:left-0 sm:order-none">
               <Loguear />
-            </div>
+            </div> */}
 
           </div>
         </div>

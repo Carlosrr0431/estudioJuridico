@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { SwiperEstudio } from "./SwiperEstudio"
+
 
 export default function About() {
     return (
@@ -8,7 +10,7 @@ export default function About() {
                 <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-primary-foreground">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Conocenos...</h1>
                     <p className="mt-3 max-w-3xl text-lg sm:mt-5 sm:text-xl">
-                        Nuestro sueño fue abrir un gimnasio que no solo fuera un lugar para entrenar, sino también un espacio donde las personas se sintieran motivadas y apoyadas en su camino hacia la salud y el bienestar.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil perspiciatis error fugiat doloribus, hic sint sunt delectus! Iste expedita quo aspernatur earum tenetur ducimus, accusamus accusantium excepturi hic animi iure.
                     </p>
                 </div>
             </section>
@@ -17,23 +19,23 @@ export default function About() {
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <RocketIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600">Enfoque en la salud y el bienestar</h3>
+                            <h3 className="text-xl font-semibold text-gray-600">Lorem ipsum, dolor</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos un estilo de vida saludable, fomentando la actividad física regular y la alimentación balanceada.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil perspiciatis error fugiat doloribus, hic sint sunt delectus!
                             </p>
                         </div>
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <UsersIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600"> Enfoque en facilitar un ambiente positivo</h3>
+                            <h3 className="text-xl font-semibold text-gray-600"> Lorem ipsum, dolor</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos la conexión entre los miembros mediante talleres sobre técnicas y el bienestar.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil perspiciatis error fugiat doloribus, hic sint sunt delectus!
                             </p>
                         </div>
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <BoltIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600">Enfoque en facilitar la eficiencia</h3>
+                            <h3 className="text-xl font-semibold text-gray-600">Lorem ipsum, dolor</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos una serie de programas  para darte los mejores resultados adecuados para vos.
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil perspiciatis error fugiat doloribus, hic sint sunt delectus!
                             </p>
                         </div>
                     </div>
@@ -68,6 +70,11 @@ export default function About() {
                     </div>
                 </div>
             </section>
+
+            <section className="relative max-h-[80vh] md:max-h-[40vh] md:w-full mb-[200px]">
+                <SwiperEstudio />
+            </section>
+
         </div>
     )
 }

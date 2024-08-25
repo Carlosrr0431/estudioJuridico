@@ -19,7 +19,7 @@ const Socials = () => {
 
   const pathname = usePathname();
 
-  return <div className={`${pathname == '/cursos' || pathname == '/planes' || pathname == '/about' || cambioHeader ? 'hidden' : ''} flex gap-x-7 items-center justify-center`}>
+  return <div className={`${pathname == '/cursos' || pathname == '/planes' || pathname == '/about' || cambioHeader ? 'hidden' : ''} flex gap-x-7 items-center justify-center relative bottom-[70px] md:bottom-0`}>
 
     <Link href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Facebook} width={10} height={10} alt="" /> </Link>
 

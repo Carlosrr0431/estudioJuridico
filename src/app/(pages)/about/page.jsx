@@ -19,7 +19,7 @@ const AboutPage = () => {
     }
 
     return (
-        <div className='w-ful h-full overflow-y-auto' onScroll={handleScroll} ref={container}>
+        <div className='w-full h-full overflow-y-auto' onScroll={handleScroll} ref={container}>
             <About />
         </div>
     )

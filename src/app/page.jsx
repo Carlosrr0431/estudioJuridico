@@ -5,19 +5,24 @@ import Degradado from './public/capas.svg'
 import Socials from "./(components)/Socials";
 import { useEffect, useRef, useState } from "react";
 import { Beneficios } from "./(components)/Beneficios";
+import { Consultas } from "./(components)/Consultas";
 import { Sponsor } from "./(components)/Sponsor";
 import TestimonialSlider from "./(components)/TestimonialSlider";
 import Link from "next/link";
-import SwiperGym from "./(components)/SwiperGym";
-import Logo from './public/logo biggest.svg'
-import Video from './public/3196220-hd_1920_1080_25fps.mp4'
+import SwiperGym from "./(components)/SwiperEstudio";
+import Logo from './public/logo estudio juridico-02.svg'
+import Video from './public/6101151-uhd_4096_2160_30fps.mp4'
 import { useAppContext } from "./(context)/AppWrapper";
+import ModalOracion from "./(components)/ModalOracion";
+import imagenForm from './public/view-3d-justice-scales (1).jpg'
+import Contact from "./(components)/Contact";
+
 
 const Home = () => {
 
   const [showModal, setShowModal] = useState(false);
   const container = useRef()
-  const { setCambioHeader} = useAppContext()
+  const { setCambioHeader } = useAppContext()
   const [scroll, setScroll] = useState(0)
 
 
@@ -41,28 +46,28 @@ const Home = () => {
           <div className={` text-center montserrat flex   flex-col justify-center xl:mx-auto w-full items-center  xl:text-center h-full container `}>
             <h1
 
-              className=" h2 text-[32px] xl:text-[45px] xl:w-[1200px] font-medium mx-auto items-center text-center fontMatroska"
+              className=" h2 text-[32px] xl:text-[55px] xl:w-[1200px] font-light mx-auto items-center text-center "
             >
-              <span className="texto-borde">movernos</span>, movernos SANAMENTE <br />
+              Estudio jurídico
             </h1>
 
-            <Link href={'/planes'}>
-              <button class=" text-black  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-fondo1 hover:border-transparent ">
-                VER PLANES
-              </button></Link>
+            <h1
+
+              className=" h2 text-[32px] relative bottom-[20px] xl:text-[40px] xl:w-[1200px] font-semibold mx-auto items-center text-center "
+            >
+              Soluciones legales de excelencia <br />
+            </h1>
+
+
+            <button onClick={() => setShowModal(true)} class=" text-white  hover:bg-black/90  font-semibold hover:text-white py-2 px-4  hover:border-transparent bg-yellow-700  rounded-sm ">
+              REALIZA TU CONSULTA
+            </button>
           </div>
         </div>
 
 
         <div className="xl:bg-right xl:bg-no-repeat w-full h-full  translate-z-50  absolute inset-0   -z-20    ">
-          <video src={Video} autoPlay muted loop className="object-cover h-[100%] w-[100%]" />
-
-          <Image src={Degradado}
-            width={0}
-
-            height={0}
-            alt=""
-            className="w-full  h-full absolute z-20 inset-0 object-cover mix-blend-multiply" />
+          <video src={Video} autoPlay muted loop className="object-cover h-[100%] w-[100%] brightness-50 " />
         </div>
 
 
@@ -72,45 +77,86 @@ const Home = () => {
 
       </section>
 
-      <section className="h-[100%] w-[100%] bg-slate-800 ">
-
-        <SwiperGym />
-      </section>
-
-      <section className="h-[100%] w-[100%] bg-slate-800 ">
+      <section className="h-[100%] w-[100%] bg-gray-100 ">
 
         <Beneficios />
       </section>
 
-{/* 
+      <section className="h-[100%] w-[100%] bg-sky-900 ">
 
-      <section className="h-[50%] w-[100%] bg-slate-600">
-        <Sponsor />
-      </section> */}
-
-
-
-      <section className="h-full w-[100%] bg-slate-800 ">
-
-        <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[40px] mx-auto top-20 relative intro2'>Nuestros Testimonios</h1>
-        <TestimonialSlider />
+        <Consultas />
       </section>
 
-      <footer class="w-full bg-gray-900 h-[700px] sm:h-[320px]">
+      <section className="h-full w-[100%] bg-indigo-950">
+
+        <Contact/>
+    
+        {/* <div class="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center ">
+          <div class="bg-gray-100 text-gray-500  shadow-xl w-full overflow-hidden mb-2" >
+            <div class="md:flex w-full">
+              <div class="hidden md:block w-1/2 relative">
+                <Image src={imagenForm} height={0} width={0} className="w-full h-full object-cover absolute unset-0" alt=""/>
+              </div>
+              <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+                <div class="text-center mb-10">
+                  <h1 class="font-bold text-3xl text-gray-900">Realiza tu consulta</h1>
+                  <p className="text-gray-700">Completá la siguiente información</p>
+                </div>
+                <div className="mx-auto mr-14">
+                  <div class="flex -mx-3">
+                    <div class="w-1/2 px-3 mb-5">
+                      <label for="" class="text-xs font-semibold px-1">Nombre</label>
+                      <div class="flex">
+                        <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                        <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Cristian" />
+                      </div>
+                    </div>
+                    <div class="w-1/2 px-3 mb-5">
+                      <label for="" class="text-xs font-semibold px-1">Apellido</label>
+                      <div class="flex">
+                        <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                        <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Benitez" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex -mx-3">
+                    <div class="w-full px-3 mb-5">
+                      <label for="" class="text-xs font-semibold px-1">Motivo de la consulta</label>
+                      <div class="flex">
+                        <textarea class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></textarea>
+                    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex -mx-3">
+                    <div class="w-full px-3 mb-12 invisible">
+                      <label for="" class="text-xs font-semibold px-1">Password</label>
+                      <div class="flex">
+                        <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
+                        <input type="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex -mx-3">
+                    <div class="w-full px-3 mb-5 relative bottom-[50px]">
+                      <button class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">Consultar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
+     
+
+      </section>
+
+      {/* <footer class="w-full bg-gray-900 h-[200px]  sm:h-[250px]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-          <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row">
-            <div class="flex justify-center ">
-              <Image
-                src={Logo}
-                width={180}
-                height={100}
-                alt=""
-                priority={true}
-                // lg:mx-0 lg:start-1 lg:translate-y-14 lg:items-start lg:-translate-x-[80px]
-                className={``}
-              />
-            </div>
+          <div class="py-16 flex justify-around items-center flex-col gap-8 lg:flex-row">
+
             <ul class="text-lg text-center sm:flex items-cente justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
 
               <li class="sm:my-0 my-2" ><a href="#" class="text-white hover:text-gray-400">Planes</a></li>
@@ -129,7 +175,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
+
+      {
+        showModal && <ModalOracion showModal={showModal} setShowModal={() => setShowModal(false)} />
+      }
     </main >
   );
 };
